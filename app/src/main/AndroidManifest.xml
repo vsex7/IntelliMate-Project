@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- For Android 14 (API 34+) if foregroundServiceType is mediaProjection -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +20,7 @@
         android:theme="@style/Theme.IntelliMate"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.intellimate.intellimate.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.IntelliMate">
@@ -23,6 +30,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".core.system.IntelliMateAccessibilityService"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <service
+            android:name=".core.system.OverlayService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+            <!-- No intent filter needed if started explicitly -->
     </application>
 
 </manifest>

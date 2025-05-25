@@ -1,4 +1,4 @@
-package com.ai.intellimate.ui.theme
+package com.intellimate.intellimate.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

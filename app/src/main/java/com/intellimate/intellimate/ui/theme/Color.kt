@@ -1,4 +1,4 @@
-package com.ai.intellimate.ui.theme
+package com.intellimate.intellimate.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

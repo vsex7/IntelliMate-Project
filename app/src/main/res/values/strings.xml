@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IntelliMate</string>
+    <string name="accessibility_service_description">IntelliMate Accessibility Service: Provides AI-powered assistance by observing interactions within supported dating applications. This helps in generating contextual suggestions and insights. Enabling this service allows IntelliMate to read screen content and interact with apps on your behalf for this purpose.</string>
 </resources>

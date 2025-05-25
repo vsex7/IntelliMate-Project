@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewTextChanged|typeWindowContentChanged|typeWindowStateChanged|typeViewScrolled|typeViewClicked|typeViewFocused"
+    android:packageNames="com.android.chrome,com.example.simulateddatingapp,com.example.anotherdatingapp"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="100"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:settingsActivity="com.intellimate.intellimate.ui.SettingsActivity" />
+    <!-- Using a placeholder SettingsActivity for now as per instructions -->
+    <!-- The project plan mentions a comprehensive settings center, which would be the eventual target -->
